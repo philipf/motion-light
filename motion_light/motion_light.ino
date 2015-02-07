@@ -39,8 +39,8 @@ void loop() {
     return;
   }
   
-  digitalWrite(overrideLed, LOW);
-    
+  overrideOff();
+   
   unsigned long currentMillis = millis();
   
   int pirState = digitalRead(pirPin);
@@ -61,17 +61,21 @@ void loop() {
 }
 
 void relayOn() {
-  digitalWrite(relayPin, HIGH);
+  digitalWrite(relayPin, LOW);
   digitalWrite(relayLed, HIGH);  
 }
 
 void overrideOn() {
-  digitalWrite(relayPin, HIGH);
+  digitalWrite(relayPin, LOW);
   digitalWrite(overrideLed, HIGH);  
 }
 
+void overrideOff() {
+  digitalWrite(overrideLed, LOW);
+}
+
 void relayOff() {
-  digitalWrite(relayPin, LOW);
+  digitalWrite(relayPin, HIGH);
   digitalWrite(relayLed, LOW);    
 }
 
