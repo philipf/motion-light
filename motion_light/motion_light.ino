@@ -21,7 +21,7 @@ const int relayLed    = 0;  // ATTINY85 pin 5
 const int overridePin = 3;  // ATTINY85 pin 2
 const int overrideLed = 4;  // ATTINY85 pin 3
 
-unsigned int lightOnTime = 10000; // Minimum time for which light has to stay on
+unsigned int lightOnTime = 20000; // Minimum time for which light has to stay on
 unsigned long previousHigh = 0;
 
 void setup() {
