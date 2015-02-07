@@ -15,10 +15,11 @@ by Philip Fourie
 
 
 // Pin allocations
-const int pirPin   = 7;
-const int relayPin = 2;
-const int relayLed = 13;
-const int overridePin = 4;
+const int pirPin      = 1;  // ATTINY85 pin 6
+const int relayPin    = 2;  // ATTINY85 pin 7
+const int relayLed    = 0;  // ATTINY85 pin 5
+const int overridePin = 3;  // ATTINY85 pin 2
+const int overrideLed = 4;  // ATTINY85 pin 3
 
 unsigned int lightOnTime = 10000; // Minimum time for which light has to stay on
 unsigned long previousHigh = 0;
@@ -26,20 +27,20 @@ unsigned long previousHigh = 0;
 void setup() {
   pinMode(pirPin, INPUT);
   pinMode(relayPin, OUTPUT);
+  pinMode(overrideLed, OUTPUT);
   
   pinMode(overridePin, INPUT);
 }
 
 void loop() {
   if (isOverride()) {
-    relayOn();
-    digitalWrite(relayLed, HIGH);
+    overrideOn();
     delay(300);
     return;
   }
   
-  digitalWrite(relayLed, LOW);
-  
+  digitalWrite(overrideLed, LOW);
+    
   unsigned long currentMillis = millis();
   
   int pirState = digitalRead(pirPin);
@@ -61,13 +62,20 @@ void loop() {
 
 void relayOn() {
   digitalWrite(relayPin, HIGH);
- // digitalWrite(relayLed, HIGH);  
+  digitalWrite(relayLed, HIGH);  
+}
+
+void overrideOn() {
+  digitalWrite(relayPin, HIGH);
+  digitalWrite(overrideLed, HIGH);  
 }
 
 void relayOff() {
   digitalWrite(relayPin, LOW);
-//  digitalWrite(relayLed, LOW);    
+  digitalWrite(relayLed, LOW);    
 }
+
+
 
 bool isOverride() {
   return (digitalRead(overridePin) == HIGH);
