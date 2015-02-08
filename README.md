@@ -6,7 +6,7 @@ It has the following features:
 - Override switch to disable the on/off logic if required.
 - If the controller fails for whatever reason the relay will close.
 
-# Special notes
+## Special notes
 The passive infra red (PIR) and the relay switch depicted in the diagram are assembled modules.
 - The PIR module is similar to this http://imall.iteadstudio.com/im120628009.html
 - The relay module similar to this https://www.pololu.com/product/2482.  A 5V would have result in a simpler circuit but I only had a 12V in stock.
@@ -18,5 +18,5 @@ The passive infra red (PIR) and the relay switch depicted in the diagram are ass
 ## Stripboard
 ![Image](../master/designs/Stripboard/Stripboard.png?raw=true)
 
-Known issues:
+## Known issues:
 - The current version of the relayLed is not working.  Measuring it with a volt meter shows an output of 1.7V.  I think it is because the LED pin is not set each time when loop() is run.
