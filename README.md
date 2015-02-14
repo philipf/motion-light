@@ -18,5 +18,5 @@ The passive infra red (PIR) and the relay switch depicted in the diagram are ass
 ## Stripboard
 ![Image](../master/designs/Stripboard/Stripboard.png?raw=true)
 
-## Known issues:
-- The current version of the relayLed is not working.  Measuring it with a volt meter shows an output of 1.7V.  I think it is because the LED pin is not set each time when loop() is run.
+## Photos
+![Image](../master/photos/project%20installed%20to%20light.jpg?raw=true)
