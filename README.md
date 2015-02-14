@@ -19,4 +19,8 @@ The passive infra red (PIR) and the relay switch depicted in the diagram are ass
 ![Image](../master/designs/Stripboard/Stripboard.png?raw=true)
 
 ## Photos
+Completed project installed in a dark stair case
 ![Image](../master/photos/project%20installed%20to%20light.jpg?raw=true)
+
+Close-up view of the completed project.
+![Image](../master/photos/board%20overview.jpg?raw=true)
