@@ -28,7 +28,7 @@ void setup() {
   pinMode(pirPin, INPUT);
   pinMode(relayPin, OUTPUT);
   pinMode(overrideLed, OUTPUT);
-  
+  pinMode(relayLed, OUTPUT);  
   pinMode(overridePin, INPUT);
 }
 
